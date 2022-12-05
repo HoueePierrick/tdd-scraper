@@ -26,20 +26,15 @@ let listings;
 describe("First test", () => {
   beforeAll(() => {
     html = fs.readFileSync("./test.html");
-    console.log(html);
     listings = parser.listings(html);
-    // console.log(listings);
   });
 
   it("should give the correct listing object", () => {
     expect(listings.length).toBe(120);
-    expect(listings[0].url).toBe(
-      "https://sfbay.craigslist.org/sfc/muc/7563821305.html"
-    );
   });
 
   it("should get correct title", () => {
-    expect(listings[0].title).toBe("Need guitarist in hardcore, metal group");
+    expect(listings[0].title).toBe("Drummer Looking to Start Band");
   });
 
   it("should get correct url", () => {
@@ -50,11 +45,11 @@ describe("First test", () => {
 
   it("should get correct date from listing", () => {
     expect(listings[0].datePosted).toBe(
-      new Date("Fri Dec 02 2022 17:42:35 GMT+0100")
+      new Date("Mon Dec 05 2022 07:19:49 GMT+0100")
     );
   });
 
   it("should get hood from listing", () => {
-    expect(listings[0].hood).toBe("bayview");
+    expect(listings[0].hood).toBe("san jose downtown");
   });
 });
