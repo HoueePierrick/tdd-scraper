@@ -39,12 +39,12 @@ describe("First test", () => {
 
   it("should get correct url", () => {
     expect(listings[0].url).toBe(
-      "https://sfbay.craigslist.org/sfc/muc/7563821305.html"
+      "https://sfbay.craigslist.org/sby/muc/7564765927.html"
     );
   });
 
   it("should get correct date from listing", () => {
-    expect(listings[0].datePosted).toBe(
+    expect(listings[0].datePosted).toStrictEqual(
       new Date("Mon Dec 05 2022 07:19:49 GMT+0100")
     );
   });
